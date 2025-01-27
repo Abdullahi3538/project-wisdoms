@@ -45,17 +45,19 @@ const Enlish=[
     "10. Honesty is the best policy."
 ]
 
-
+// value somalia
 let value=0
 text.innerHTML=Somali[value]
 
 text.style.display="none"
 
-
+// value English
 let value_Enlish=0
 text2.innerHTML=Enlish[value_Enlish]
 text2.style.display="none"
 
+
+// Button koowaad
 btnX1.addEventListener("click",()=>{
     btnX2.style.display="none"
     text.style.display="flex"
@@ -65,6 +67,7 @@ btnX1.addEventListener("click",()=>{
     next.style.display="flex"
 
 })
+// Button labaad
 btnX2.addEventListener("click",()=>{
     btnX2.style.display="none"
     text.style.display="none"
@@ -75,41 +78,62 @@ btnX2.addEventListener("click",()=>{
     next2.style.display="flex"
 
 })
+// next and back somalia
 
 next.addEventListener("click",()=>{
+    if(value<Somali.length-1){
     value++
-    text.innerHTML=Somali[value] 
-})
-
-back.addEventListener("click",()=>{
-    value--
-    text.innerHTML=Somali[value] 
-})
-
-
-next2.addEventListener("click",()=>{
-    value_Enlish++
-    text2.innerHTML=Enlish[value_Enlish] 
-
-    if(value_Enlish === 8){
+    text.innerHTML=Somali[value] }
+    if(value===9){
         go_back.style.display="flex"
+
     }
 })
 
+back.addEventListener("click",()=>{
+    if(value>0){
+    value--
+    text.innerHTML=Somali[value] }
+})
+// eglish Next and back
+
+next2.addEventListener("click",()=>{
+   
+ 
+
+    if(value_Enlish< Enlish.length-1){
+        value_Enlish++
+        text2.innerHTML=Enlish[value_Enlish] 
+    
+    }
+
+  else if(value_Enlish === 9){
+        go_back.style.display="flex"
+      
+    }
+  
+})
+
 back2.addEventListener("click",()=>{
-    value_Enlish--
-    text2.innerHTML=Enlish[value_Enlish] 
+   
+    if(value_Enlish > 0){
+        value_Enlish--
+        text2.innerHTML=Enlish[value_Enlish] 
+    }
 })
 
 go_back.addEventListener("click",()=>{
-       back2.style.display="none"
-      next2.style.display="none"
-      text2.style.display="none"
-       dooro.style.display="flex"
-       go_back.style.display="none"
-       
-       btnX1.style.display="inline"
-       btnX2.style.display="inline"
+    
+    back2.style.display="none"
+    next2.style.display="none"
+    text2.style.display="none"
+    dooro.style.display="flex"
+    go_back.style.display="none"
+    btnX1.style.display="inline"
+    btnX2.style.display="inline"
+    next.style.display="None"
+    back.style.display="None"
+    text.style.display="None"
        
 
 })
@@ -134,7 +158,6 @@ Span2.style.display="None"
 
 btn1.addEventListener("click",(events)=>{
     events.preventDefault()
-
     
 if (Name.value === "" || Email.value ==="" || Password.value ==="" || Confrim.value ===""){
     alert("Fadlan Formka buuxi")
@@ -148,12 +171,9 @@ else if (Password.value.length != Confrim.value.length){
     Span.style.display="None"
     Span1.style.display="flex"
 }
-
 else if (Span2){
    from.style.display="None"
    h1.style.display="None"
    Span2.style.display="flex"
-}
-   
-    
+}  
 })
